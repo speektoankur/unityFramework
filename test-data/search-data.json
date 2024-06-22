@@ -1,0 +1,24 @@
+{
+    "searchdata" : [
+        "Narendra Modi",
+        "Manmohan Singh",
+        "Selenium",
+        "India",
+        "Atlan",
+        "Indian Police Service",
+        "George Bush"
+    ],
+    "searches" : [
+        {"articlename":"Narendra Modi", "linktext":"p>a[title='Varanasi (Lok Sabha constituency)']","expectedtitle":"Varanasi Lok Sabha constituency"},
+        {"articlename":"Manmohan Singh", "linktext":"p>a[title='Indian National Congress']","expectedtitle":"Indian National Congress"},
+        {"articlename":"Selenium", "linktext":"p>a[title='Chemical element']","expectedtitle":"Chemical element"},
+        {"articlename":"India", "linktext":"p>a[title='Arabian Sea']","expectedtitle":"Arabian Sea"},
+        {"articlename":"Atlanta", "linktext":"p>a[title='Fulton County, Georgia']","expectedtitle":"Fulton County, Georgia"}
+    ],
+    "languagetestdata" : [
+        {"articlename":"Narendra Modi", "languge":"Hindi","optiontexttoclick":"हिन्दी","labeltoverify":"नरेन्द्र मोदी"},
+        {"articlename":"John F. Kennedy", "languge":"French","optiontexttoclick":"Français","labeltoverify":"John Fitzgerald Kennedy"},
+        {"articlename":"Bicycle", "languge":"Dutch","optiontexttoclick":"Nederlands","labeltoverify":"Fiets"},
+        {"articlename":"Sweet potato", "languge":"Arabic","optiontexttoclick":"العربية","labeltoverify":"بطاطا حلوة"}
+    ]
+}
