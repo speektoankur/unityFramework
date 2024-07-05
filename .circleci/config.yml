@@ -11,10 +11,10 @@ jobs:
       - run: npx playwright install chrome
       - run:
           name: Run test
-          command: PLAYWRIGHT_JUNIT_OUTPUT_NAME=results.xml npx playwright test --reporter=junit --project=chromium
+          command: PLAYWRIGHT_JUNIT_OUTPUT_NAME=results.html npx playwright test --reporter=junit --project=chromium
       - store_artifacts: 
           command: mkdir /tmp/artifacts;
-          path: results.xml
+          path: results.html
 # Invoke jobs via workflows
 workflows:
   run-test-workflow:
