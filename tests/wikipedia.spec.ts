@@ -11,7 +11,7 @@ import { searchdata, searches, languagetestdata } from '../test-data/search-data
   let articleScreen: ArticleScreen;
 
   test.beforeEach(async () => {
-    const browser = await chromium.launch({ headless: false });
+    const browser = await chromium.launch({ headless: true });
     context = await browser.newContext();
     page = await context.newPage();
     await page.goto("https://www.wikipedia.org/");
