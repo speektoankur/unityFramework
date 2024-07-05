@@ -5,15 +5,6 @@ jobs:
       - image: mcr.microsoft.com/playwright:v1.23.1-focal
     # Steps to the job
     steps:
-      - run:
-        name: Creating Dummy Artifacts
-        command: |
-          echo "my artifact file" > /tmp/art-1;
-          mkdir /tmp/artifacts;
-          echo "my artifact files in a dir" > /tmp/artifacts/art-2;
-      - store_artifacts:
-        path: /tmp/art-1
-        destination: artifact-file
       - checkout
       - run: npm i -D @playwright/test
       - run: npx playwright install
@@ -21,10 +12,9 @@ jobs:
       - run:
           name: Run test
           command: PLAYWRIGHT_JUNIT_OUTPUT_NAME=results.xml npx playwright test --reporter=junit --project=chromium
-      - store_test_results:
+      - store_artifacts: 
+          command: mkdir /tmp/artifacts;
           path: results.xml
-      - store_artifacts:
-        path: results.xml
 # Invoke jobs via workflows
 workflows:
   run-test-workflow:
