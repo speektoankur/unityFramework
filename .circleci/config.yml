@@ -5,7 +5,7 @@ jobs:
       - image: mcr.microsoft.com/playwright:v1.23.1-focal
     # Steps to the job
     steps:
-    - run:
+      - run:
         name: Creating Dummy Artifacts
         command: |
           echo "my artifact file" > /tmp/art-1;
