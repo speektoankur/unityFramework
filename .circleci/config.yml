@@ -12,14 +12,10 @@ jobs:
       - run:
           name: Run test
           command: PLAYWRIGHT_JUNIT_OUTPUT_NAME=index.html npx playwright test --reporter=junit --project=chromium
-      - run: ls 
-      - run: 
-          name: Making directory 
-          command: |
-            mkdir /tmp/artifacts
-            cp playwright-report/index.html /tmp/artifacts 
+      - run:   
+          command: ls 
       - store_artifacts:
-          path: /tmp/artifacts    
+          path: playwright-report/index.html   
 # Invoke jobs via workflows
 workflows:
   run-test-workflow:
