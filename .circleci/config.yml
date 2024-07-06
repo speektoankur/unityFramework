@@ -12,7 +12,8 @@ jobs:
       - run:
           name: Run test
           command: PLAYWRIGHT_JUNIT_OUTPUT_NAME=index.html npx playwright test --reporter=junit --project=chromium
-      - run:
+      - run: ls 
+      - run: 
           name: Making directory 
           command: |
             mkdir /tmp/artifacts
