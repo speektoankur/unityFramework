@@ -4,7 +4,6 @@ jobs:
     docker:
       - image: mcr.microsoft.com/playwright:v1.23.1-focal
     # Steps to the job
-    working_directory: /tmp
     steps:
       - checkout
       - run: npm i -D @playwright/test
@@ -13,9 +12,8 @@ jobs:
       - run:
           name: Run test
           command: PLAYWRIGHT_JUNIT_OUTPUT_NAME=index.html npx playwright test --reporter=junit --project=chromium
-      - run: 
-          command: mkdir /tmp/artifacts
-          command: cp playwright-report/index.html /tmp/artifacts
+      - run: mkdir /tmp/artifacts
+      - run: cp playwright-report/index.html /tmp/artifacts
 # Invoke jobs via workflows
 workflows:
   run-test-workflow:
