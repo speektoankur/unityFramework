@@ -14,7 +14,7 @@ jobs:
           command: PLAYWRIGHT_JUNIT_OUTPUT_NAME=index.html npx playwright test --reporter=junit --project=chromium
       - store_artifacts: 
           command: mkdir /tmp/artifacts;
-          path: playwright-report/index.html
+          path: playwright-report
 # Invoke jobs via workflows
 workflows:
   run-test-workflow:
