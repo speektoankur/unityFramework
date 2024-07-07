@@ -10,6 +10,7 @@ import { defineConfig, devices } from '@playwright/test';
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
+  outputDir: 'playwright-report/data',
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -31,7 +32,7 @@ export default defineConfig({
     // Capture screenshot after each test failure.
     screenshot: 'on',
         // Record video only when retrying a test for the first time.
-    video: 'on'
+    video: 'on',
   },
 
   /* Configure projects for major browsers */
