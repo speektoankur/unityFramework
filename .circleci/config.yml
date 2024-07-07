@@ -19,9 +19,11 @@ jobs:
           command: npx playwright test --headed tests/wikipedia.spec.ts --project=chromium
       - run:
           name: See current directory    
-          command: ls 
+          command: ls -a 
       - store_artifacts:
-          path: playwright-report/index.html   
+          path: playwright-report/index.html
+      - store_artifacts:
+          path: playwright-report/data   
 # Invoke jobs via workflows
 workflows:
   run-test-workflow:
