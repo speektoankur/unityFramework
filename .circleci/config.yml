@@ -5,13 +5,18 @@ jobs:
       - image: mcr.microsoft.com/playwright:v1.23.1-focal
     # Steps to the job
     steps:
+      - run:
+          name: Run Playwright tests in headed mode
+          command: |
+            export DISPLAY=:99
+            Xvfb :99 &
       - checkout
       - run: npm i -D @playwright/test
       - run: npx playwright install
       - run: npx playwright install chrome
       - run:
           name: Run test
-          command: npx playwright test tests/wikipedia.spec.ts --project=chromium
+          command: npx playwright test --headed tests/wikipedia.spec.ts --project=chromium
       - run:
           name: See current directory    
           command: ls 
